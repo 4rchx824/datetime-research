@@ -19,20 +19,12 @@ model Post {
     @@index([name])
 }
 
-model Task {
-    id        Int      @id @default(sequence())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-
-    @@index([name])
-}
-
 model Deadline {
     id        Int      @id @default(sequence())
     name      String
     createdAt DateTime @default(now())
-    deadline  DateTime
+    updatedAt DateTime @updatedAt
+    deadline DateTime
 
     @@index([name])
 }
