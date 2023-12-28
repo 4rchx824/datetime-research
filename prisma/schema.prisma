@@ -6,15 +6,16 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
+    provider = "cockroachdb"
     url      = env("DATABASE_URL")
 }
 
-model Post {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model Task {
+    id         String   @id @default(cuid())
+    name       String
+    completed  Boolean  @default(false)
+    createdAt  DateTime @default(now()) @db.Timestamptz()
+    completeBy DateTime @db.Timestamptz()
 
     @@index([name])
 }
