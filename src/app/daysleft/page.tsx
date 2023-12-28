@@ -1,25 +1,39 @@
+"use client";
 import React from "react";
-import { api } from "@/trpc/server";
+import { api } from "@/trpc/react";
+import { format, parseISO } from "date-fns";
 
 interface PageProps {}
 
 const Page: React.FC<PageProps> = () => {
-    
-  //   const deadlineData = api.date.getAllDates.query();
+  const { data: deadlineData, error } = api.date.getAllDates.useQuery();
 
-  //   console.log(deadlineData); // Corrected from 'data' to 'deadlineData'
+  console.log("DEADLINE:", deadlineData);
 
   return (
     <div>
       <h1>Days left for each deadline</h1>
-      <p>Here you can see how many days are left for each deadline</p>
-      {/* <div>
+      <div>
         {deadlineData ? (
-          <p>Your most recent post: {deadlineData[0].name}</p>
+          <div>
+            <p>
+              Your most recent post:{" "}
+              {format(
+                parseISO(deadlineData[0]?.deadline?.toISOString()!),
+                "MM/dd/yyyy",
+              )}
+            </p>
+            <p>
+              Time diff: {deadlineData[0]?.deadline?.toLocaleTimeString()}
+            </p>
+            <p>
+              Today date: {new Date().toString()}
+            </p>
+          </div>
         ) : (
           <p>You have no posts yet.</p>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };
