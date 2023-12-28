@@ -6,15 +6,25 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
+    provider = "cockroachdb"
     url      = env("DATABASE_URL")
 }
 
 model Post {
-    id        Int      @id @default(autoincrement())
+    id        Int      @id @default(sequence())
     name      String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+
+    @@index([name])
+}
+
+model Deadline {
+    id        Int      @id @default(sequence())
+    name      String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    deadline DateTime
 
     @@index([name])
 }
