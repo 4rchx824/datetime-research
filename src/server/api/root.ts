@@ -1,4 +1,5 @@
 import { taskRouter } from "@/server/api/routers/task";
+import { dateRouter } from "@/server/api/routers/date";
 import { createTRPCRouter } from "@/server/api/trpc";
 
 /**
@@ -8,6 +9,7 @@ import { createTRPCRouter } from "@/server/api/trpc";
  */
 export const appRouter = createTRPCRouter({
   task: taskRouter,
+  date: dateRouter,
 });
 
 // export type definition of API
