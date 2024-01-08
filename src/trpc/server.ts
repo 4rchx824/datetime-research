@@ -24,6 +24,8 @@ const createContext = cache(() => {
     headers: new Headers({
       cookie: cookies().toString(),
       "x-trpc-source": "rsc",
+      //Added this to get the timezone of the user, might remove later?
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     }),
   });
 });
