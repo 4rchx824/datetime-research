@@ -26,33 +26,7 @@ const Page: React.FC<PageProps> = () => {
     updatedAt: Date;
     deadline: Date;
   };
-
-  const YourComponent = () => {
-    const [position, setPosition] = useState(null);
-
-    useEffect(() => {
-      const fetchDates = async () => {
-        //???
-        try {
-          var position = await new Promise((resolve, reject) => {
-            navigator.geolocation.getCurrentPosition(resolve, reject);
-          });
-
-          console.log("THIS IS THE POSITION", position);
-
-          // Now you can use position in your logic
-          // ...
-        } catch (error) {
-          console.error("Error getting geolocation:", error);
-        }
-      };
-
-      fetchDates();
-    }, []); // Run this effect only once when the component mounts
-
-    return <h1>{position}</h1>;
-  };
-  // timezone is set to my desired one (which is the client's timezone) only when it loads
+// timezone is set to my desired one (which is the client's timezone) only when it loads
 useEffect(() => {
   setTzid(Intl.DateTimeFormat().resolvedOptions().timeZone);
 }, [])
