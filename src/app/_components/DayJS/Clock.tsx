@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { format } from "date-fns";
+import dayjs from "dayjs";
 
 const Clock = () => {
-  const [datetime, setDatetime] = useState<Date | undefined>();
+  const [datetime, setDatetime] = useState<Date | undefined>(new Date());
   useEffect(() => {
     const interval = setInterval(() => {
       setDatetime(new Date());
@@ -14,7 +14,7 @@ const Clock = () => {
   }, []);
   return (
     <div className="flex w-full max-w-[210px] justify-center rounded-md border bg-blue-600 px-4 py-2 text-white shadow-md">
-      {datetime && format(datetime, "dd/mm/yy hh:mm:ss")}
+      {datetime && dayjs(datetime).format( "DD MMM YYYY hh:mm:ss")}
     </div>
   );
 };

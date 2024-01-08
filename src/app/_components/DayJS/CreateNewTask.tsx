@@ -6,15 +6,15 @@ import { api } from "@/trpc/react";
 
 type TaskProperties = {
   name: string;
-  date: Date | undefined;
-  time: string | undefined;
+  date: string;
+  time: string;
 };
 
 const CreateNewTask = () => {
   const [task, setTask] = useState<TaskProperties>({
     name: "",
-    date: undefined,
-    time: undefined,
+    date: "",
+    time: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,10 +25,38 @@ const CreateNewTask = () => {
     console.log(task);
   }, [task]);
 
-  const { mutate } = api.task.create.useMutation({});
+
+  const ctx = api.useUtils();
+
+  const { mutateAsync } = api.task.create.useMutation({
+    onSuccess: () => {
+      setTask({
+        name: "",
+        date: "",
+        time: "",
+      });
+
+      void ctx.task.invalidate();
+    },
+  });
+
+  const createTask = async () => {
+    try {
+      const data = await mutateAsync({
+        name: task.name,
+        date: task.date,
+        time: task.time,
+      });
+
+      console.log(data);
+      
+    } catch (e) {
+      alert(e);
+    }
+  };
 
   return (
-    <form className="flex items-center space-x-4">
+    <form className="flex items-center space-x-4" action={createTask}>
       <input
         type="text"
         name="name"
