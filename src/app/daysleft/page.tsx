@@ -28,11 +28,18 @@ const Page: React.FC<PageProps> = () => {
     updatedAt: Date;
     deadline: Date;
   };
+<<<<<<< HEAD
 
   // timezone is set to my desired one (which is the client's timezone) only when it loads
   useEffect(() => {
     setTzid(Intl.DateTimeFormat().resolvedOptions().timeZone);
   }, []);
+=======
+// timezone is set to my desired one (which is the client's timezone) only when it loads
+useEffect(() => {
+  setTzid(Intl.DateTimeFormat().resolvedOptions().timeZone);
+}, [])
+>>>>>>> 41f4cdf2ff9582cc34252c64eadebd7e5f35c7b8
   return (
     <div>
       <h1>Days left for each deadline</h1>
