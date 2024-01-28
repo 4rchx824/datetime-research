@@ -11,7 +11,7 @@ Version 2 Fact Sheet
 | Property       | Remarks                                                                                                  |
 | -------------- | -------------------------------------------------------------------------------------------------------- |
 | ESLint         | This Version was done in a rush and some ESLint with the idea of **"if it works locally can already"**   |
-| UI             | Used bare UI as no communication has been done with the **UI Team**                                      |
+| UI             | Used bare UI as no communication has been done with Allison & Nhat Tien                              |
 | Database       | Database was done with **NO** communication with the UMS Teams or DevOps Team                            |
 | App Router     | Every CRUD is not **defined in its own page** and app router is used                                     |
 | Error Handling | **No consideration** of error handling                                                                   |
