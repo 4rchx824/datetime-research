@@ -1,28 +1,19 @@
-# Create T3 App
+# DateTime-Module Research Project
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## Version 1
 
-## What's next? How do I make an app with this?
+### This research project is done by Jocelyn and Archie
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+This code was done with the worst practices in place to be used to compare with other versions to teach the importance of having standard when it comes to working with a team and coding practices
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+Version 1 Fact Sheet
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+| Property       | Remarks                                                                                                  |
+| -------------- | -------------------------------------------------------------------------------------------------------- |
+| ESLint         | This Version was done in a rush and some ESLint with the idea of **"if it works locally can already"**   |
+| UI             | Used bare UI as no communication has been done with the **UI Team**                                      |
+| Database       | Database was done with **NO** communication with the UMS Teams or DevOps Team                            |
+| App Router     | Every CRUD is not **defined in its own page** and app router is used                                     |
+| Error Handling | **No consideration** of error handling                                                                   |
+| SST            | This version has no implementation of SST nor is it hosted                                               |
 
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
